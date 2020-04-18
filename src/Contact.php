@@ -119,6 +119,14 @@ class Contact
         return true;
     }
 
+    public function isPhoneNumberEmpty()
+    {
+        if (empty($this->phone_number)) {
+            return true;
+        }
+        return false;
+    }
+
     public function isPhoneNumberValid(): bool
     {
         // Allow +, - and . in phone number
@@ -139,6 +147,13 @@ class Contact
         }
     }
 
+    public function isEmailEmpty():bool
+    {
+        if (empty($this->email)) {
+            return true;
+        }
+        return false;
+    }
     public function isEmailValid(): bool
     {
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
