@@ -5,6 +5,15 @@ error_reporting(E_ALL);
 
 require('vendor/autoload.php');
 
+use App\src\ConnectBdd;
+
+$bdd = new ConnectBdd();
+$bdd->connect();
+
+$result = $bdd->fetchAll("SELECT * FROM contact");
+
+
+
 ?>
 
 <html>
